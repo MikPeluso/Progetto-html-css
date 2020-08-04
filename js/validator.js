@@ -1,16 +1,8 @@
-/*!
- * Validator v0.11.5 for Bootstrap 3, by @1000hz
- * Copyright 2016 Cina Saffary
- * Licensed under http://opensource.org/licenses/MIT
- *
- * https://github.com/1000hz/bootstrap-validator
- */
 
 +function ($) {
   'use strict';
 
-  // VALIDATOR CLASS DEFINITION
-  // ==========================
+
 
   function getValue($el) {
     return $el.is('[type="checkbox"]') ? $el.prop('checked')                                     :
@@ -43,7 +35,7 @@
 
     this.$inputs.filter(function () { return getValue($(this)) }).trigger('focusout')
 
-    this.$element.attr('novalidate', true) // disable automatic native validation
+    this.$element.attr('novalidate', true)
     this.toggleSubmit()
   }
 
@@ -341,8 +333,7 @@
     return this
   }
 
-  // VALIDATOR PLUGIN DEFINITION
-  // ===========================
+
 
 
   function Plugin(option) {
@@ -363,8 +354,6 @@
   $.fn.validator.Constructor = Validator
 
 
-  // VALIDATOR NO CONFLICT
-  // =====================
 
   $.fn.validator.noConflict = function () {
     $.fn.validator = old
@@ -372,8 +361,7 @@
   }
 
 
-  // VALIDATOR DATA-API
-  // ==================
+
 
   $(window).on('load', function () {
     $('form[data-toggle="validator"]').each(function () {
